@@ -1,0 +1,22 @@
+[
+    {"id": 1, "titulo": "Matrix", "director": "Wachowski", "genero": "ciencia ficcion", "rating": 9.1, "anio": 1999},
+    {"id": 2, "titulo": "Inception", "director": "Nolan", "genero": "ciencia ficcion", "rating": 9.0, "anio": 2010},
+    {"id": 3, "titulo": "Toy Story", "director": "Lasseter", "genero": "animacion", "rating": 8.5, "anio": 1995},
+    {"id": 4, "titulo": "El padrino", "director": "Coppola", "genero": "drama", "rating": 9.5, "anio": 1972},
+    {"id": 5, "titulo": "Interstellar", "director": "Nolan", "genero": "ciencia ficcion", "rating": 8.9, "anio": 2014},
+    {"id": 6, "titulo": "Pulp Fiction", "director": "Tarantino", "genero": "crimen", "rating": 8.9, "anio": 1994},
+    {"id": 7, "titulo": "El club de la pelea", "director": "Fincher", "genero": "drama", "rating": 8.8, "anio": 1999},
+    {"id": 8, "titulo": "Parasite", "director": "Bong", "genero": "thriller", "rating": 8.5, "anio": 2019},
+    {"id": 9, "titulo": "El viaje de Chihiro", "director": "Miyazaki", "genero": "animacion", "rating": 8.6, "anio": 2001},
+    {"id": 10, "titulo": "Gladiador", "director": "Scott", "genero": "accion", "rating": 8.5, "anio": 2000},
+    {"id": 11, "titulo": "Whiplash", "director": "Chazelle", "genero": "drama", "rating": 8.5, "anio": 2014},
+    {"id": 12, "titulo": "El caballero de la noche", "director": "Nolan", "genero": "accion", "rating": 9.0, "anio": 2008},
+    {"id": 13, "titulo": "Volver al futuro", "director": "Zemeckis", "genero": "ciencia ficcion", "rating": 8.5, "anio": 1985},
+    {"id": 14, "titulo": "Shrek", "director": "Adamson", "genero": "animacion", "rating": 7.9, "anio": 2001},
+    {"id": 15, "titulo": "Psicosis", "director": "Hitchcock", "genero": "terror", "rating": 8.5, "anio": 1960},
+    {"id": 16, "titulo": "El senor de los anillos: El retorno del rey", "director": "Jackson", "genero": "fantasia", "rating": 9.0, "anio": 2003},
+    {"id": 17, "titulo": "Tiempos violentos", "director": "Tarantino", "genero": "crimen", "rating": 8.9, "anio": 1994},
+    {"id": 18, "titulo": "WALL-E", "director": "Stanton", "genero": "animacion", "rating": 8.4, "anio": 2008},
+    {"id": 19, "titulo": "Blade Runner 2049", "director": "Villeneuve", "genero": "ciencia ficcion", "rating": 8.0, "anio": 2017},
+    {"id": 20, "titulo": "El secreto de sus ojos", "director": "Campanella", "genero": "drama", "rating": 8.2, "anio": 2009}
+]
