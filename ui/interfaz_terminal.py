@@ -12,9 +12,10 @@ class InterfazTerminal:
         print("1. Mostrar todas las películas")
         print("2. Buscar por título")
         print("3. Buscar por director")
-        print("4. Filtrar por género")
-        print("5. Películas relacionadas")
-        print("6. Top N mejores películas")
+        print("4. Buscar por año (búsqueda en árbol binario)")
+        print("5. Filtrar por género")
+        print("6. Películas relacionadas")
+        print("7. Top N mejores películas")
         print("0. Salir")
         print("\n")
 
@@ -51,8 +52,18 @@ class InterfazTerminal:
                         print(f"{i}. {pelicula}")
                 else:
                     print("\nNo se encontraron películas con ese director.")
-                
+
             elif opcion == "4":
+                anio = int(input("Ingrese el año de estreno: ").strip())
+                resultado = self.gestor.buscar_por_anio(anio)
+                if resultado:
+                    print(f"\nPelículas estrenadas en {anio}:")
+                    for i, pelicula in enumerate(resultado, 1):
+                        print(f"{i}. {pelicula}")
+                else:
+                    print(f"\nNo se encontraron películas estrenadas en {anio}.")
+                
+            elif opcion == "5":
                 genero = input("Ingrese el género: ").strip()
                 resultado = self.gestor.buscar_por_genero(genero)
                
@@ -63,7 +74,7 @@ class InterfazTerminal:
                 else:
                     print("\nNo se encontraron películas con ese género.")
                 
-            elif opcion == "5":
+            elif opcion == "6":
                 titulo = input("Ingrese el título de la película base: ")
                 encontradas = self.gestor.buscar_por_titulo(titulo)
             
@@ -82,7 +93,7 @@ class InterfazTerminal:
                 else:
                     print("No se encontraron otras películas relacionadas en el catálogo.")
 
-            elif opcion == "6":
+            elif opcion == "7":
                 n = int(input("¿Cuantas películas desea mostrar? Ingrese el número: "))
                 resultado = self.gestor.obtener_top_n_mejores(n)
                  
@@ -92,7 +103,7 @@ class InterfazTerminal:
                         print(f"{i}. {pelicula}")
                 else:
                     print("\nNo se encontraron películas que cumplan con los criterios.")
-               
+
             elif opcion == "0":
                 print("\n¡Gracias por usar Kino! Hasta luego")
                 break

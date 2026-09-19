@@ -1,0 +1,26 @@
+Altura del árbol: 4                                               
+
+--- inorder (ordenado alfabéticamente) ---
+  Arrival (2016) - ciencia ficcion - 8.4/10 - Dirigida por Villenueve
+  Blade Runner 2049 (2017) - ciencia ficcion - 8.0/10 - Dirigida por Villenueve
+  Inception (2010) - ciencia ficcion - 9.0/10 - Dirigida por Nolan
+  Matrix (1999) - ciencia ficcion - 9.1/10 - Dirigida por Wachowski
+  Titanic (1997) - drama - 7.8/10 - Dirigida por Cameron
+
+--- preorder ---
+  Matrix
+  Inception
+  Blade Runner 2049
+  Arrival
+  Titanic
+
+--- postorder ---
+  Arrival
+  Blade Runner 2049
+  Inception
+  Titanic
+  Matrix
+
+--- búsquedas ---
+Buscar 'matrix': [Matrix (1999) - ciencia ficcion - 9.1/10 - Dirigida por Wachowski]
+Buscar 'zzz': []

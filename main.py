@@ -4,5 +4,6 @@ def main():
     app = InterfazTerminal()
     app.iniciar()
 
+
 if __name__ == "__main__":
     main()

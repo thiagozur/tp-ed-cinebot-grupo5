@@ -1,0 +1,802 @@
+[
+  {
+    "id": 67,
+    "titulo": "Pelicula 0",
+    "director": "Tarantino",
+    "genero": "Comedia",
+    "rating": 5.5,
+    "anio": 1964
+  },
+  {
+    "id": 78,
+    "titulo": "Pelicula 1",
+    "director": "Nolan",
+    "genero": "Comedia",
+    "rating": 8.9,
+    "anio": 2009
+  },
+  {
+    "id": 92,
+    "titulo": "Pelicula 2",
+    "director": "Wachowski",
+    "genero": "Comedia",
+    "rating": 4.2,
+    "anio": 1970
+  },
+  {
+    "id": 22,
+    "titulo": "Pelicula 3",
+    "director": "Wachowski",
+    "genero": "Acción",
+    "rating": 1.1,
+    "anio": 1942
+  },
+  {
+    "id": 11,
+    "titulo": "Pelicula 4",
+    "director": "Fincher",
+    "genero": "Acción",
+    "rating": 4.9,
+    "anio": 1982
+  },
+  {
+    "id": 11,
+    "titulo": "Pelicula 5",
+    "director": "Wachowski",
+    "genero": "Drama",
+    "rating": 8.5,
+    "anio": 1954
+  },
+  {
+    "id": 75,
+    "titulo": "Pelicula 6",
+    "director": "Fincher",
+    "genero": "Comedia",
+    "rating": 3.7,
+    "anio": 2018
+  },
+  {
+    "id": 25,
+    "titulo": "Pelicula 7",
+    "director": "Fincher",
+    "genero": "Comedia",
+    "rating": 5.9,
+    "anio": 1980
+  },
+  {
+    "id": 24,
+    "titulo": "Pelicula 8",
+    "director": "Tarantino",
+    "genero": "Comedia",
+    "rating": 5.1,
+    "anio": 1980
+  },
+  {
+    "id": 23,
+    "titulo": "Pelicula 9",
+    "director": "Fincher",
+    "genero": "Acción",
+    "rating": 2.7,
+    "anio": 1975
+  },
+  {
+    "id": 11,
+    "titulo": "Pelicula 10",
+    "director": "Wachowski",
+    "genero": "Acción",
+    "rating": 9.2,
+    "anio": 2013
+  },
+  {
+    "id": 82,
+    "titulo": "Pelicula 11",
+    "director": "Fincher",
+    "genero": "Ciencia Ficción",
+    "rating": 7.6,
+    "anio": 1989
+  },
+  {
+    "id": 10,
+    "titulo": "Pelicula 12",
+    "director": "Tarantino",
+    "genero": "Ciencia Ficción",
+    "rating": 1.8,
+    "anio": 1943
+  },
+  {
+    "id": 42,
+    "titulo": "Pelicula 13",
+    "director": "Wachowski",
+    "genero": "Acción",
+    "rating": 9.2,
+    "anio": 1979
+  },
+  {
+    "id": 3,
+    "titulo": "Pelicula 14",
+    "director": "Wachowski",
+    "genero": "Ciencia Ficción",
+    "rating": 1.7,
+    "anio": 1993
+  },
+  {
+    "id": 38,
+    "titulo": "Pelicula 15",
+    "director": "Fincher",
+    "genero": "Comedia",
+    "rating": 7.5,
+    "anio": 1947
+  },
+  {
+    "id": 48,
+    "titulo": "Pelicula 16",
+    "director": "Wachowski",
+    "genero": "Ciencia Ficción",
+    "rating": 8.7,
+    "anio": 2018
+  },
+  {
+    "id": 36,
+    "titulo": "Pelicula 17",
+    "director": "Tarantino",
+    "genero": "Comedia",
+    "rating": 4.2,
+    "anio": 1976
+  },
+  {
+    "id": 55,
+    "titulo": "Pelicula 18",
+    "director": "Fincher",
+    "genero": "Ciencia Ficción",
+    "rating": 7.6,
+    "anio": 1993
+  },
+  {
+    "id": 79,
+    "titulo": "Pelicula 19",
+    "director": "Tarantino",
+    "genero": "Comedia",
+    "rating": 2.6,
+    "anio": 1954
+  },
+  {
+    "id": 41,
+    "titulo": "Pelicula 20",
+    "director": "Nolan",
+    "genero": "Ciencia Ficción",
+    "rating": 7.4,
+    "anio": 1929
+  },
+  {
+    "id": 26,
+    "titulo": "Pelicula 21",
+    "director": "Tarantino",
+    "genero": "Drama",
+    "rating": 8.1,
+    "anio": 1910
+  },
+  {
+    "id": 47,
+    "titulo": "Pelicula 22",
+    "director": "Fincher",
+    "genero": "Ciencia Ficción",
+    "rating": 4.6,
+    "anio": 1991
+  },
+  {
+    "id": 16,
+    "titulo": "Pelicula 23",
+    "director": "Wachowski",
+    "genero": "Acción",
+    "rating": 9.1,
+    "anio": 1999
+  },
+  {
+    "id": 34,
+    "titulo": "Pelicula 24",
+    "director": "Wachowski",
+    "genero": "Drama",
+    "rating": 4.9,
+    "anio": 2016
+  },
+  {
+    "id": 49,
+    "titulo": "Pelicula 25",
+    "director": "Nolan",
+    "genero": "Acción",
+    "rating": 5.6,
+    "anio": 2015
+  },
+  {
+    "id": 54,
+    "titulo": "Pelicula 26",
+    "director": "Wachowski",
+    "genero": "Ciencia Ficción",
+    "rating": 6.8,
+    "anio": 1992
+  },
+  {
+    "id": 53,
+    "titulo": "Pelicula 27",
+    "director": "Nolan",
+    "genero": "Comedia",
+    "rating": 9.3,
+    "anio": 1963
+  },
+  {
+    "id": 51,
+    "titulo": "Pelicula 28",
+    "director": "Fincher",
+    "genero": "Comedia",
+    "rating": 4.9,
+    "anio": 1914
+  },
+  {
+    "id": 4,
+    "titulo": "Pelicula 29",
+    "director": "Fincher",
+    "genero": "Acción",
+    "rating": 2.9,
+    "anio": 1921
+  },
+  {
+    "id": 79,
+    "titulo": "Pelicula 30",
+    "director": "Fincher",
+    "genero": "Drama",
+    "rating": 9.2,
+    "anio": 2016
+  },
+  {
+    "id": 71,
+    "titulo": "Pelicula 31",
+    "director": "Nolan",
+    "genero": "Drama",
+    "rating": 7.4,
+    "anio": 2006
+  },
+  {
+    "id": 87,
+    "titulo": "Pelicula 32",
+    "director": "Fincher",
+    "genero": "Drama",
+    "rating": 3.9,
+    "anio": 1924
+  },
+  {
+    "id": 83,
+    "titulo": "Pelicula 33",
+    "director": "Fincher",
+    "genero": "Comedia",
+    "rating": 7.3,
+    "anio": 1961
+  },
+  {
+    "id": 10,
+    "titulo": "Pelicula 34",
+    "director": "Wachowski",
+    "genero": "Ciencia Ficción",
+    "rating": 9.0,
+    "anio": 1928
+  },
+  {
+    "id": 31,
+    "titulo": "Pelicula 35",
+    "director": "Tarantino",
+    "genero": "Comedia",
+    "rating": 8.0,
+    "anio": 1967
+  },
+  {
+    "id": 42,
+    "titulo": "Pelicula 36",
+    "director": "Nolan",
+    "genero": "Acción",
+    "rating": 6.9,
+    "anio": 2023
+  },
+  {
+    "id": 6,
+    "titulo": "Pelicula 37",
+    "director": "Fincher",
+    "genero": "Comedia",
+    "rating": 7.6,
+    "anio": 2026
+  },
+  {
+    "id": 36,
+    "titulo": "Pelicula 38",
+    "director": "Wachowski",
+    "genero": "Comedia",
+    "rating": 3.0,
+    "anio": 1950
+  },
+  {
+    "id": 44,
+    "titulo": "Pelicula 39",
+    "director": "Tarantino",
+    "genero": "Acción",
+    "rating": 4.3,
+    "anio": 1963
+  },
+  {
+    "id": 65,
+    "titulo": "Pelicula 40",
+    "director": "Fincher",
+    "genero": "Ciencia Ficción",
+    "rating": 1.6,
+    "anio": 1993
+  },
+  {
+    "id": 32,
+    "titulo": "Pelicula 41",
+    "director": "Fincher",
+    "genero": "Drama",
+    "rating": 8.1,
+    "anio": 1999
+  },
+  {
+    "id": 31,
+    "titulo": "Pelicula 42",
+    "director": "Wachowski",
+    "genero": "Drama",
+    "rating": 2.6,
+    "anio": 1954
+  },
+  {
+    "id": 34,
+    "titulo": "Pelicula 43",
+    "director": "Nolan",
+    "genero": "Comedia",
+    "rating": 7.1,
+    "anio": 1987
+  },
+  {
+    "id": 90,
+    "titulo": "Pelicula 44",
+    "director": "Tarantino",
+    "genero": "Drama",
+    "rating": 5.1,
+    "anio": 1947
+  },
+  {
+    "id": 63,
+    "titulo": "Pelicula 45",
+    "director": "Fincher",
+    "genero": "Comedia",
+    "rating": 1.1,
+    "anio": 1984
+  },
+  {
+    "id": 5,
+    "titulo": "Pelicula 46",
+    "director": "Nolan",
+    "genero": "Acción",
+    "rating": 3.3,
+    "anio": 1975
+  },
+  {
+    "id": 89,
+    "titulo": "Pelicula 47",
+    "director": "Fincher",
+    "genero": "Comedia",
+    "rating": 7.8,
+    "anio": 2003
+  },
+  {
+    "id": 24,
+    "titulo": "Pelicula 48",
+    "director": "Wachowski",
+    "genero": "Comedia",
+    "rating": 3.8,
+    "anio": 2024
+  },
+  {
+    "id": 78,
+    "titulo": "Pelicula 49",
+    "director": "Wachowski",
+    "genero": "Acción",
+    "rating": 2.8,
+    "anio": 1940
+  },
+  {
+    "id": 93,
+    "titulo": "Pelicula 50",
+    "director": "Fincher",
+    "genero": "Acción",
+    "rating": 5.1,
+    "anio": 1920
+  },
+  {
+    "id": 92,
+    "titulo": "Pelicula 51",
+    "director": "Tarantino",
+    "genero": "Ciencia Ficción",
+    "rating": 7.6,
+    "anio": 2019
+  },
+  {
+    "id": 72,
+    "titulo": "Pelicula 52",
+    "director": "Wachowski",
+    "genero": "Drama",
+    "rating": 8.5,
+    "anio": 1928
+  },
+  {
+    "id": 89,
+    "titulo": "Pelicula 53",
+    "director": "Wachowski",
+    "genero": "Acción",
+    "rating": 4.1,
+    "anio": 1932
+  },
+  {
+    "id": 51,
+    "titulo": "Pelicula 54",
+    "director": "Fincher",
+    "genero": "Acción",
+    "rating": 5.0,
+    "anio": 1954
+  },
+  {
+    "id": 13,
+    "titulo": "Pelicula 55",
+    "director": "Nolan",
+    "genero": "Drama",
+    "rating": 2.7,
+    "anio": 1960
+  },
+  {
+    "id": 7,
+    "titulo": "Pelicula 56",
+    "director": "Nolan",
+    "genero": "Acción",
+    "rating": 6.9,
+    "anio": 1952
+  },
+  {
+    "id": 8,
+    "titulo": "Pelicula 57",
+    "director": "Tarantino",
+    "genero": "Acción",
+    "rating": 2.9,
+    "anio": 2000
+  },
+  {
+    "id": 22,
+    "titulo": "Pelicula 58",
+    "director": "Nolan",
+    "genero": "Acción",
+    "rating": 9.5,
+    "anio": 1955
+  },
+  {
+    "id": 48,
+    "titulo": "Pelicula 59",
+    "director": "Nolan",
+    "genero": "Acción",
+    "rating": 2.1,
+    "anio": 1943
+  },
+  {
+    "id": 79,
+    "titulo": "Pelicula 60",
+    "director": "Nolan",
+    "genero": "Ciencia Ficción",
+    "rating": 8.0,
+    "anio": 1948
+  },
+  {
+    "id": 1,
+    "titulo": "Pelicula 61",
+    "director": "Wachowski",
+    "genero": "Ciencia Ficción",
+    "rating": 1.7,
+    "anio": 2014
+  },
+  {
+    "id": 29,
+    "titulo": "Pelicula 62",
+    "director": "Tarantino",
+    "genero": "Ciencia Ficción",
+    "rating": 8.1,
+    "anio": 1986
+  },
+  {
+    "id": 34,
+    "titulo": "Pelicula 63",
+    "director": "Nolan",
+    "genero": "Ciencia Ficción",
+    "rating": 8.9,
+    "anio": 1946
+  },
+  {
+    "id": 23,
+    "titulo": "Pelicula 64",
+    "director": "Nolan",
+    "genero": "Drama",
+    "rating": 8.8,
+    "anio": 1946
+  },
+  {
+    "id": 13,
+    "titulo": "Pelicula 65",
+    "director": "Wachowski",
+    "genero": "Drama",
+    "rating": 1.2,
+    "anio": 1970
+  },
+  {
+    "id": 87,
+    "titulo": "Pelicula 66",
+    "director": "Nolan",
+    "genero": "Ciencia Ficción",
+    "rating": 3.6,
+    "anio": 1937
+  },
+  {
+    "id": 3,
+    "titulo": "Pelicula 67",
+    "director": "Nolan",
+    "genero": "Comedia",
+    "rating": 6.2,
+    "anio": 1963
+  },
+  {
+    "id": 24,
+    "titulo": "Pelicula 68",
+    "director": "Wachowski",
+    "genero": "Comedia",
+    "rating": 4.1,
+    "anio": 1975
+  },
+  {
+    "id": 32,
+    "titulo": "Pelicula 69",
+    "director": "Fincher",
+    "genero": "Drama",
+    "rating": 1.4,
+    "anio": 2019
+  },
+  {
+    "id": 53,
+    "titulo": "Pelicula 70",
+    "director": "Nolan",
+    "genero": "Acción",
+    "rating": 6.6,
+    "anio": 2011
+  },
+  {
+    "id": 31,
+    "titulo": "Pelicula 71",
+    "director": "Nolan",
+    "genero": "Comedia",
+    "rating": 3.2,
+    "anio": 1943
+  },
+  {
+    "id": 52,
+    "titulo": "Pelicula 72",
+    "director": "Fincher",
+    "genero": "Acción",
+    "rating": 7.9,
+    "anio": 1950
+  },
+  {
+    "id": 65,
+    "titulo": "Pelicula 73",
+    "director": "Fincher",
+    "genero": "Drama",
+    "rating": 6.5,
+    "anio": 1979
+  },
+  {
+    "id": 26,
+    "titulo": "Pelicula 74",
+    "director": "Fincher",
+    "genero": "Drama",
+    "rating": 2.5,
+    "anio": 1948
+  },
+  {
+    "id": 12,
+    "titulo": "Pelicula 75",
+    "director": "Nolan",
+    "genero": "Comedia",
+    "rating": 1.8,
+    "anio": 1945
+  },
+  {
+    "id": 64,
+    "titulo": "Pelicula 76",
+    "director": "Wachowski",
+    "genero": "Drama",
+    "rating": 4.5,
+    "anio": 1947
+  },
+  {
+    "id": 20,
+    "titulo": "Pelicula 77",
+    "director": "Wachowski",
+    "genero": "Ciencia Ficción",
+    "rating": 7.6,
+    "anio": 1926
+  },
+  {
+    "id": 11,
+    "titulo": "Pelicula 78",
+    "director": "Tarantino",
+    "genero": "Drama",
+    "rating": 4.4,
+    "anio": 2024
+  },
+  {
+    "id": 77,
+    "titulo": "Pelicula 79",
+    "director": "Nolan",
+    "genero": "Comedia",
+    "rating": 9.3,
+    "anio": 1945
+  },
+  {
+    "id": 85,
+    "titulo": "Pelicula 80",
+    "director": "Nolan",
+    "genero": "Acción",
+    "rating": 7.4,
+    "anio": 1941
+  },
+  {
+    "id": 43,
+    "titulo": "Pelicula 81",
+    "director": "Fincher",
+    "genero": "Drama",
+    "rating": 8.3,
+    "anio": 2020
+  },
+  {
+    "id": 51,
+    "titulo": "Pelicula 82",
+    "director": "Fincher",
+    "genero": "Ciencia Ficción",
+    "rating": 5.3,
+    "anio": 2021
+  },
+  {
+    "id": 65,
+    "titulo": "Pelicula 83",
+    "director": "Tarantino",
+    "genero": "Comedia",
+    "rating": 3.0,
+    "anio": 1955
+  },
+  {
+    "id": 44,
+    "titulo": "Pelicula 84",
+    "director": "Tarantino",
+    "genero": "Acción",
+    "rating": 4.5,
+    "anio": 1965
+  },
+  {
+    "id": 57,
+    "titulo": "Pelicula 85",
+    "director": "Fincher",
+    "genero": "Comedia",
+    "rating": 3.7,
+    "anio": 1977
+  },
+  {
+    "id": 62,
+    "titulo": "Pelicula 86",
+    "director": "Tarantino",
+    "genero": "Comedia",
+    "rating": 8.0,
+    "anio": 2005
+  },
+  {
+    "id": 20,
+    "titulo": "Pelicula 87",
+    "director": "Wachowski",
+    "genero": "Ciencia Ficción",
+    "rating": 7.4,
+    "anio": 1974
+  },
+  {
+    "id": 8,
+    "titulo": "Pelicula 88",
+    "director": "Fincher",
+    "genero": "Acción",
+    "rating": 9.7,
+    "anio": 2016
+  },
+  {
+    "id": 37,
+    "titulo": "Pelicula 89",
+    "director": "Nolan",
+    "genero": "Drama",
+    "rating": 3.4,
+    "anio": 1927
+  },
+  {
+    "id": 9,
+    "titulo": "Pelicula 90",
+    "director": "Wachowski",
+    "genero": "Comedia",
+    "rating": 2.9,
+    "anio": 1989
+  },
+  {
+    "id": 87,
+    "titulo": "Pelicula 91",
+    "director": "Fincher",
+    "genero": "Comedia",
+    "rating": 9.7,
+    "anio": 1936
+  },
+  {
+    "id": 27,
+    "titulo": "Pelicula 92",
+    "director": "Fincher",
+    "genero": "Ciencia Ficción",
+    "rating": 6.9,
+    "anio": 1973
+  },
+  {
+    "id": 83,
+    "titulo": "Pelicula 93",
+    "director": "Tarantino",
+    "genero": "Ciencia Ficción",
+    "rating": 7.2,
+    "anio": 1971
+  },
+  {
+    "id": 24,
+    "titulo": "Pelicula 94",
+    "director": "Fincher",
+    "genero": "Drama",
+    "rating": 2.6,
+    "anio": 1989
+  },
+  {
+    "id": 70,
+    "titulo": "Pelicula 95",
+    "director": "Tarantino",
+    "genero": "Acción",
+    "rating": 5.2,
+    "anio": 1984
+  },
+  {
+    "id": 73,
+    "titulo": "Pelicula 96",
+    "director": "Tarantino",
+    "genero": "Ciencia Ficción",
+    "rating": 1.7,
+    "anio": 1932
+  },
+  {
+    "id": 42,
+    "titulo": "Pelicula 97",
+    "director": "Tarantino",
+    "genero": "Comedia",
+    "rating": 1.6,
+    "anio": 1977
+  },
+  {
+    "id": 79,
+    "titulo": "Pelicula 98",
+    "director": "Tarantino",
+    "genero": "Acción",
+    "rating": 7.7,
+    "anio": 1950
+  },
+  {
+    "id": 10,
+    "titulo": "Pelicula 99",
+    "director": "Fincher",
+    "genero": "Drama",
+    "rating": 6.9,
+    "anio": 1984
+  }
+]

@@ -23,5 +23,9 @@ class Pelicula:
     def rating(self):
         return self._rating
 
+    @property
+    def anio(self):
+        return self._anio
+
     def __repr__(self):
-        return f"{self.titulo} ({self._anio}) - {self._genero} - {self._rating}/10 - Dirigida por {self._director}"
+        return f"{self.titulo} ({self.anio}) - {self.genero} - {self.rating}/10 - Dirigida por {self.director}"
