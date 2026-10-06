@@ -1,0 +1,4 @@
+{'altura_bst': 20, 'altura_avl': 7, 'tiempo_bst_ms': 0.9992122650146484, 'tiempo_avl_ms': 1.0008811950683594, 'mejor_balance': True}
+{'altura_bst': 30, 'altura_avl': 11, 'tiempo_bst_ms': 3.0007362365722656, 'tiempo_avl_ms': 1.0001659393310547, 'mejor_balance': True}
+{'altura_bst': 40, 'altura_avl': 15, 'tiempo_bst_ms': 4.000425338745117, 'tiempo_avl_ms': 2.0012855529785156, 'mejor_balance': True}
+{'altura_bst': 50, 'altura_avl': 19, 'tiempo_bst_ms': 5.000829696655273, 'tiempo_avl_ms': 3.0007362365722656, 'mejor_balance': True}

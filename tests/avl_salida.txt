@@ -1,0 +1,30 @@
+=== AVL con datos ordenados ===
+Altura del AVL: 4
+Cantidad de nodos: 10
+
+--- inorder ---
+  A(1)
+  B(2)
+  C(3)
+  D(4)
+  E(5)
+  F(6)
+  G(7)
+  H(8)
+  I(9)
+  J(10)
+
+--- preorder (muestra el balance) ---
+  D(4)
+  B(2)
+  A(1)
+  C(3)
+  H(8)
+  F(6)
+  E(5)
+  G(7)
+  I(9)
+  J(10)
+
+Buscar 'F': F(6)
+Buscar 'Z': None

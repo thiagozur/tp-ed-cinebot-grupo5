@@ -1,0 +1,24 @@
+=== Árbol General de Categorías ===
+Raíz: Películas
+Altura: 3
+Cantidad de nodos: 11
+
+--- Recorrido en amplitud ---
+['Películas', 'Ciencia Ficción', 'Acción', 'Comedia', 'Cyberpunk', 'Viajes temporales', 'Inteligencia artificial', 'Superhéroes', 'Guerra', 'Comedia romántica', 'Comedia negra']
+
+--- Recorrido en profundidad (preorder) ---
+['Películas', 'Ciencia Ficción', 'Cyberpunk', 'Viajes temporales', 'Inteligencia artificial', 'Acción', 'Superhéroes', 'Guerra', 'Comedia', 'Comedia romántica', 'Comedia negra']
+
+--- Recorrido en profundidad (postorder) ---
+['Cyberpunk', 'Viajes temporales', 'Inteligencia artificial', 'Ciencia Ficción', 'Superhéroes', 'Guerra', 'Acción', 'Comedia romántica', 'Comedia negra', 'Comedia', 'Películas']
+
+--- Niveles ---
+  Nivel 0: ['Películas']
+  Nivel 1: ['Ciencia Ficción', 'Acción', 'Comedia']
+  Nivel 2: ['Cyberpunk', 'Viajes temporales', 'Inteligencia artificial', 'Superhéroes', 'Guerra', 'Comedia romántica', 'Comedia negra']
+
+--- Hijos de 'Ciencia Ficción' ---
+['Cyberpunk', 'Viajes temporales', 'Inteligencia artificial']
+
+--- Buscar 'Cyberpunk' ---
+Encontrado: Nodo(Cyberpunk)

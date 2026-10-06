@@ -10,12 +10,13 @@ class InterfazTerminal:
         print("        ¡Bienvenido a Kino!")
         print("=" * 36)
         print("1. Mostrar todas las películas")
-        print("2. Buscar por título")
-        print("3. Buscar por director")
-        print("4. Buscar por año (búsqueda en árbol binario)")
-        print("5. Filtrar por género")
+        print("2. Buscar por título (AVL)")
+        print("3. Buscar por director (BST)")
+        print("4. Buscar por año (BST)")
+        print("5. Filtrar por género (BST)")
         print("6. Películas relacionadas")
         print("7. Top N mejores películas")
+        print("8. Mostrar categorías disponibles (N-ario)")
         print("0. Salir")
         print("\n")
 
@@ -103,6 +104,18 @@ class InterfazTerminal:
                         print(f"{i}. {pelicula}")
                 else:
                     print("\nNo se encontraron películas que cumplan con los criterios.")
+
+            elif opcion == "8":
+                print("\nCategorías disponibles:")
+                self.gestor.mostrar_categorias()
+                
+                cat = input("\nDesea explorar alguna categoría? Ingrese el nombre (o 0 para volver): ").strip().lower()
+                if cat in self.gestor.generos:
+                    self.gestor.mostrar_categorias(nodo = self.gestor._arbol_categorias.buscar(cat), solo_cat = False)
+                    pel = input("\nDesea saber más de alguna película? Ingrese el nombre (o 0 para volver): ").strip().lower()
+                    if pel != "0":
+                        for p in self.gestor.buscar_por_titulo(pel):
+                            print("-", p)
 
             elif opcion == "0":
                 print("\n¡Gracias por usar Kino! Hasta luego")
