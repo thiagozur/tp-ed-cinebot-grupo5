@@ -1,0 +1,4 @@
+{'tiempo_heap_ms': 14.716386795043945, 'tiempo_sorted_ms': 9.520530700683594}
+{'tiempo_heap_ms': 33.51116180419922, 'tiempo_sorted_ms': 109.05337333679199}
+{'tiempo_heap_ms': 61.03968620300293, 'tiempo_sorted_ms': 1495.729684829712}
+{'tiempo_heap_ms': 632.5905323028564, 'tiempo_sorted_ms': 18203.095197677612}

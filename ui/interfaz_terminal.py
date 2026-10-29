@@ -14,8 +14,8 @@ class InterfazTerminal:
         print("3. Buscar por director (BST)")
         print("4. Buscar por año (BST)")
         print("5. Filtrar por género (BST)")
-        print("6. Películas relacionadas")
-        print("7. Top N mejores películas")
+        print("6. Películas relacionadas por género/director (grafo)")
+        print("7. Top N mejores películas (Montículo Máximo)")
         print("8. Mostrar categorías disponibles (N-ario)")
         print("0. Salir")
         print("\n")
@@ -84,15 +84,23 @@ class InterfazTerminal:
                     return
                 
                 pelicula_base = encontradas[0]
+                maraton = input("¿Quiere una sugerencia de películas para mirar estilo maratón? (s/n): ")
+                maraton = True if maraton.lower() in ("s", "S", "si", "Si", "sí", "Sí") else False
+
                 print(f"Película seleccionada: {pelicula_base}")
                 
-                relacionadas = self.gestor.obtener_relacionadas(pelicula_base)
+                relacionadas, maraton_propuesta = self.gestor.obtener_relacionadas(pelicula_base, maraton)
                 if relacionadas:
-                    print(f"\nPelículas relacionadas por género ({pelicula_base.genero}):")
+                    print(f"\nPelículas relacionadas:")
                     for p in relacionadas:
                         print(f" - {p}")
                 else:
-                    print("No se encontraron otras películas relacionadas en el catálogo.")
+                    print("\nNo se encontraron otras películas relacionadas en el catálogo.")
+
+                if maraton and maraton_propuesta:
+                    print(f"\nSugerencia de maratón:")
+                    for i, p in enumerate(maraton_propuesta, 1):
+                        print(f" {i}. {p}")
 
             elif opcion == "7":
                 n = int(input("¿Cuantas películas desea mostrar? Ingrese el número: "))

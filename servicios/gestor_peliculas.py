@@ -3,6 +3,8 @@ from modelos.pelicula import Pelicula
 from estructuras.arbol_binario import ArbolBST
 from estructuras.avl import AVL
 from estructuras.arbol_general import ArbolGeneral
+from estructuras.heaps import MaxHeap
+from estructuras.grafos import Grafo, dfs
 import bisect
 
 class GestorPeliculas:
@@ -14,6 +16,8 @@ class GestorPeliculas:
         self._bst_genero = ArbolBST()
         self.generos = {}
         self._arbol_categorias = ArbolGeneral()
+        self._heap_ratings = MaxHeap()
+        self._grafo_relacionadas = Grafo()
 
     def cargar_desde_json(self, ruta = "datos/peliculas.json"):
         """Carga las películas desde el archivo JSON"""
@@ -21,7 +25,11 @@ class GestorPeliculas:
             with open(ruta, "r", encoding = "utf-8") as archivos:
                 datos = json.load(archivos)
                 self._peliculas = [Pelicula(d["id"], d["titulo"], d["director"], d["genero"], d["rating"], d["anio"]) for d in datos]
+                
                 raiz_categorias = self._arbol_categorias.insertar_raiz("Categorías")
+                por_genero = {}
+                por_director = {}
+                
                 for p in self._peliculas:
                     self._arbol_anio.insertar(p, clave = lambda e: e.anio)
                     self._avl_titulo.insertar(p, clave = lambda e: e.titulo)
@@ -32,6 +40,31 @@ class GestorPeliculas:
                         nodo_g = self._arbol_categorias.agregar_hijo(raiz_categorias, genero)
                         self.generos[genero] = nodo_g
                     self._arbol_categorias.agregar_hijo(self.generos[genero], p)
+                    self._heap_ratings.insertar((p.rating, p.titulo, p))
+                    
+                    self._grafo_relacionadas.agregar_vertice(p)
+                    g_key = p.genero.lower().strip()
+                    d_key = p.director.lower().strip()
+
+                    if g_key not in por_genero:
+                        por_genero[g_key] = []
+                    por_genero[g_key].append(p)
+                    
+                    if d_key not in por_director:
+                        por_director[d_key] = []
+                    por_director[d_key].append(p)
+
+                for grupo in por_genero.values():
+                    for i in range(len(grupo)):
+                        for j in range(i + 1, len(grupo)):
+                            self._grafo_relacionadas.agregar_arista(grupo[i], grupo[j])
+
+                for grupo in por_director.values():
+                    for i in range(len(grupo)):
+                        for j in range(i + 1, len(grupo)):
+                            if grupo[j] not in self._grafo_relacionadas.vertices[grupo[i]]:
+                                self._grafo_relacionadas.agregar_arista(grupo[i], grupo[j])
+
                     
         except FileNotFoundError:
             print(f"Error: No se encontró el archivo")
@@ -41,6 +74,8 @@ class GestorPeliculas:
             self._bst_director = ArbolBST()
             self._bst_genero = ArbolBST()
             self._arbol_categorias = ArbolGeneral()
+            self._heap_ratings = MaxHeap()
+            self._grafo_relacionadas = Grafo()
 
     def ordenar_por_anio(self):
         self._peliculas.sort(key = lambda p: p.anio)
@@ -77,13 +112,20 @@ class GestorPeliculas:
         return self._bst_genero.buscar(genero_lower, lambda e: e.genero.lower())
 
     def obtener_top_n_mejores(self, n):
-        """Devuelve las N películas con mayor rating"""
-        peliculas_ordenadas = sorted(self._peliculas, key = lambda p: p.rating, reverse = True)
-        return peliculas_ordenadas[:n]
+        """Devuelve una lista con las N mejores películas (utilizando un montículo máximo)"""
+        tuplas_top = self._heap_ratings.obtener_top_n(n)
 
-    def obtener_relacionadas(self, pelicula):
-        """Devuelve películas relacionadas que compartan el mismo género, excluyendo la película utilizada de referencia"""
-        return [p for p in self._peliculas if p.genero.lower() == pelicula.genero.lower() and p.titulo.lower() != pelicula.titulo.lower()]
+        return [tupla[2] for tupla in tuplas_top]
+
+    def obtener_relacionadas(self, pelicula, maraton = False):
+        """Devuelve las películas relacionadas por género o por director (utilizando un grafo),
+        puede devolver también una 'maratón' de 4 películas obtenida por DFS"""
+        relacionadas = self._grafo_relacionadas.vertices[pelicula]
+        maraton_propuesta = []
+        if maraton:
+            camino_dfs = dfs(self._grafo_relacionadas.vertices, pelicula)
+            maraton_propuesta = camino_dfs[:4]
+        return relacionadas, maraton_propuesta
 
     def buscar_por_anio(self, anio):
         """Busca películas según el año ingresado (utilizando un BST)"""
