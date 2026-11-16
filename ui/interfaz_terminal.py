@@ -17,6 +17,7 @@ class InterfazTerminal:
         print("6. Películas relacionadas por género/director (grafo)")
         print("7. Top N mejores películas (Montículo Máximo)")
         print("8. Mostrar categorías disponibles (N-ario)")
+        print("9. Encontrar camino entre dos películas")
         print("0. Salir")
         print("\n")
 
@@ -81,7 +82,7 @@ class InterfazTerminal:
             
                 if not encontradas:
                     print(f"No se encontró ninguna película con el nombre '{titulo}'.")
-                    return
+                    continue
                 
                 pelicula_base = encontradas[0]
                 maraton = input("¿Quiere una sugerencia de películas para mirar estilo maratón? (s/n): ")
@@ -124,6 +125,54 @@ class InterfazTerminal:
                     if pel != "0":
                         for p in self.gestor.buscar_por_titulo(pel):
                             print("-", p)
+            
+            elif opcion == "9":
+                titulo_origen = input("Ingrese el título de la película de origen: ").strip()
+                encontradas_origen = self.gestor.buscar_por_titulo(titulo_origen)
+                if not encontradas_origen:
+                    print(f"\nNo se encontró ninguna película con el nombre '{titulo_origen}'.")
+                    continue
+
+                titulo_destino = input("Ingrese el título de la película de destino: ").strip()
+                encontradas_destino = self.gestor.buscar_por_titulo(titulo_destino)
+                if not encontradas_destino:
+                    print(f"\nNo se encontró ninguna película con el nombre '{titulo_destino}'.")
+                    continue
+
+                origen = encontradas_origen[0]
+                destino = encontradas_destino[0]
+
+                print(f"\nOrigen: {origen}")
+                print(f"Destino: {destino}")
+                print("\n¿Qué tipo de camino desea calcular?")
+                print("  1. Conexión más corta (BFS)")
+                print("  2. Ruta recomendada, por afinidad/rating/año (Dijkstra)")
+                criterio = input("Seleccione una opción (1/2): ").strip()
+
+                if criterio == "1":
+                    camino = self.gestor.buscar_camino_mas_corto(origen, destino)
+                    if camino:
+                        print(f"\nConexión más corta ({len(camino) - 1} salto/s):")
+                        for i, p in enumerate(camino):
+                            prefijo = "   " if i == 0 else " > "
+                            print(f"{prefijo}{p}")
+                    else:
+                        print("\nNo existe un camino que conecte ambas películas.")
+
+                elif criterio == "2":
+                    camino, costo_total = self.gestor.buscar_camino_recomendado(origen, destino)
+                    if camino:
+                        print(f"\nRuta recomendada (costo total: {costo_total}):")
+                        for i, p in enumerate(camino):
+                            if i == 0:
+                                print(f"   {p}")
+                            else:
+                                costo_tramo = self.gestor._grafo_ponderado.vertices[camino[i - 1]][p]
+                                print(f" -[costo: {costo_tramo}] > {p}")
+                    else:
+                        print("\nNo existe un camino que conecte ambas películas.")
+                else:
+                    print("\nError. Criterio no válido.")
 
             elif opcion == "0":
                 print("\n¡Gracias por usar Kino! Hasta luego")

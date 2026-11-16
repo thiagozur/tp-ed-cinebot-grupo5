@@ -55,7 +55,7 @@ Además, esto permitió agregar una función que le sugiere al usuario una "mara
 
 | Recorrido | Descripción | Complejidad |
 | :--- | :--- | :--- |
-| **Amplitud (BFS)** | Acceso directo a los vecinos de distancia 1 utilizando la lista de adyacencia del grafo.. Se utilizó para obtener las películas relacionadas directamente. | O(1) + O(n_vecinos) |
+| **Amplitud (BFS)** | Acceso directo a los vecinos de distancia 1 utilizando la lista de adyacencia del grafo. Se utilizó para obtener las películas relacionadas directamente. | O(1) + O(n_vecinos) |
 | **Profundidad (DFS)** | Explora el grafo en profundidad avanzando lo más lejos posible por cada rama antes de retroceder. Se utilizó para generar la sugerencia de maratón. | O(V+E) |
 
 ### 3.4 Código del grafo
@@ -63,7 +63,7 @@ Además, esto permitió agregar una función que le sugiere al usuario una "mara
 Archivo: estructuras/grafos.py
 * Grafo: implementación del grafo no dirigido.
 * Digrafo: implementación del grafo dirigido.
-* Métodos de los grafos: agregar_vertice, agregar_arista_mostrar.
+* Métodos de los grafos: agregar_vertice, agregar_arista, mostrar.
 * Funciones de recorridos: bfs, dfs.
 
 ---
@@ -235,6 +235,6 @@ para quitar la direccionalidad. El código original se conservó y se utilizó p
 ---
 
 ## 7. Datos y evidencia
-* Script de comparación del MaxHeap con el método previo (utilizando sorted): [heap_vs_sorted.py](../algoritmos/probar_avl.py)
+* Script de comparación del MaxHeap con el método previo (utilizando sorted): [heap_vs_sorted.py](../algoritmos/heap_vs_sorted.py)
 * Salidas de scripts de prueba: [tests](../tests/)
 

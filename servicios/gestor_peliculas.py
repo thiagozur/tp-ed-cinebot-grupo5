@@ -4,7 +4,7 @@ from estructuras.arbol_binario import ArbolBST
 from estructuras.avl import AVL
 from estructuras.arbol_general import ArbolGeneral
 from estructuras.heaps import MaxHeap
-from estructuras.grafos import Grafo, dfs
+from estructuras.grafos import Grafo, dfs, GrafoPonderado, bfs_camino_mas_corto, dijkstra
 import bisect
 
 class GestorPeliculas:
@@ -18,6 +18,7 @@ class GestorPeliculas:
         self._arbol_categorias = ArbolGeneral()
         self._heap_ratings = MaxHeap()
         self._grafo_relacionadas = Grafo()
+        self._grafo_ponderado = GrafoPonderado()
 
     def cargar_desde_json(self, ruta = "datos/peliculas.json"):
         """Carga las películas desde el archivo JSON"""
@@ -32,7 +33,7 @@ class GestorPeliculas:
                 
                 for p in self._peliculas:
                     self._arbol_anio.insertar(p, clave = lambda e: e.anio)
-                    self._avl_titulo.insertar(p, clave = lambda e: e.titulo)
+                    self._avl_titulo.insertar(p, clave = lambda e: e.titulo.lower())
                     self._bst_director.insertar(p, clave = lambda e: e.director)
                     self._bst_genero.insertar(p, clave = lambda e: e.genero)
                     genero = p.genero
@@ -43,6 +44,7 @@ class GestorPeliculas:
                     self._heap_ratings.insertar((p.rating, p.titulo, p))
                     
                     self._grafo_relacionadas.agregar_vertice(p)
+                    self._grafo_ponderado.agregar_vertice(p)
                     g_key = p.genero.lower().strip()
                     d_key = p.director.lower().strip()
 
@@ -58,13 +60,16 @@ class GestorPeliculas:
                     for i in range(len(grupo)):
                         for j in range(i + 1, len(grupo)):
                             self._grafo_relacionadas.agregar_arista(grupo[i], grupo[j])
+                            costo = self._calcular_costo_transicion(grupo[i], grupo[j])
+                            self._grafo_ponderado.agregar_arista(grupo[i], grupo[j], costo)
 
                 for grupo in por_director.values():
                     for i in range(len(grupo)):
                         for j in range(i + 1, len(grupo)):
                             if grupo[j] not in self._grafo_relacionadas.vertices[grupo[i]]:
                                 self._grafo_relacionadas.agregar_arista(grupo[i], grupo[j])
-
+                                costo = self._calcular_costo_transicion(grupo[i], grupo[j])
+                                self._grafo_ponderado.agregar_arista(grupo[i], grupo[j], costo)
                     
         except FileNotFoundError:
             print(f"Error: No se encontró el archivo")
@@ -76,6 +81,7 @@ class GestorPeliculas:
             self._arbol_categorias = ArbolGeneral()
             self._heap_ratings = MaxHeap()
             self._grafo_relacionadas = Grafo()
+            self._grafo_ponderado = GrafoPonderado()
 
     def ordenar_por_anio(self):
         self._peliculas.sort(key = lambda p: p.anio)
@@ -117,6 +123,22 @@ class GestorPeliculas:
 
         return [tupla[2] for tupla in tuplas_top]
 
+    def _calcular_costo_transicion(self, p1, p2):
+        """Calcula el costo no negativo de pasar de la película p1 a p2"""
+        mismo_genero = p1.genero.lower().strip() == p2.genero.lower().strip()
+        mismo_director = p1.director.lower().strip() == p2.director.lower().strip()
+
+        if mismo_genero and mismo_director:
+            penalizacion_vinculo = 0.5
+        elif mismo_director:
+            penalizacion_vinculo = 1.0
+        else:
+            penalizacion_vinculo = 2.0
+
+        dif_rating = abs(p1.rating - p2.rating)
+        dif_anio = abs(p1.anio - p2.anio) / 10.0
+        return round(penalizacion_vinculo + dif_rating + dif_anio, 2)
+
     def obtener_relacionadas(self, pelicula, maraton = False):
         """Devuelve las películas relacionadas por género o por director (utilizando un grafo),
         puede devolver también una 'maratón' de 4 películas obtenida por DFS"""
@@ -126,6 +148,14 @@ class GestorPeliculas:
             camino_dfs = dfs(self._grafo_relacionadas.vertices, pelicula)
             maraton_propuesta = camino_dfs[:4]
         return relacionadas, maraton_propuesta
+
+    def buscar_camino_mas_corto(self, origen, destino):
+        """Devuelve el camino con menor cantidad de saltos usando BFS"""
+        return bfs_camino_mas_corto(self._grafo_relacionadas.vertices, origen, destino)
+
+    def buscar_camino_recomendado(self, origen, destino):
+        """Devuelve el camino de menor costo acumulado y su costo total usando Dijkstra"""
+        return dijkstra(self._grafo_ponderado.vertices, origen, destino)
 
     def buscar_por_anio(self, anio):
         """Busca películas según el año ingresado (utilizando un BST)"""
