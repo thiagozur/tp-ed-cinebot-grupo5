@@ -12,6 +12,7 @@ En esta etapa incorporamos **dos estructuras de datos** que resuelven problemas 
 ---
 
 ## 2. TP6 — Heap
+
 ### 2.1 ¿Por qué usar un montículo?
 
 En la implementación anterior, para obtener las N mejores películas según el rating se estaba utilizando el método sorted de Python para ordenar todas las películas en una lista y luego se hacía slicing para obtener las N primeras en esa lista ordenada. Este método es ineficiente para listas grandes en comparación con la implementación actual, que utiliza un montículo máximo (ordenado por rating) que se genera al cargar los datos para extraer de él los valores necesarios.
@@ -44,7 +45,7 @@ Archivo: estructuras/heaps.py
 
 ### 3.1 ¿Cómo se integra el grafo?
 
-Se decidió incorporar un grafo para rediseñar la función de las películas relacionadas. Se incluyeron implementaciones de grafo dirido y grafo no dirigido. En este caso, se crea un grafo no dirigido al cargar los datos en el que cada película es un vértice, y tiene aristas que la conecta con otras siempre que compartan género o director.
+Se decidió incorporar un grafo para rediseñar la función de las películas relacionadas. Se incluyeron implementaciones de grafo dirigido y grafo no dirigido. En este caso, se crea un grafo no dirigido al cargar los datos en el que cada película es un vértice, y tiene aristas que la conecta con otras siempre que compartan género o director.
 
 ### 3.2 ¿Por qué este cambio?
 
@@ -61,6 +62,7 @@ Además, esto permitió agregar una función que le sugiere al usuario una "mara
 ### 3.4 Código del grafo
 
 Archivo: estructuras/grafos.py
+
 * Grafo: implementación del grafo no dirigido.
 * Digrafo: implementación del grafo dirigido.
 * Métodos de los grafos: agregar_vertice, agregar_arista, mostrar.
@@ -79,21 +81,23 @@ Archivo: estructuras/grafos.py
 ### 4.2 Código de integración en servicios/gestor_películas.py
 
 **Import:**
+
 ```python
 from estructuras.heaps import MaxHeap
 from estructuras.grafos import Grafo, dfs
 ```
 
 **Inicialización:**
+
 ```python
 with open(ruta, "r", encoding = "utf-8") as archivos:
     datos = json.load(archivos)
     self._peliculas = [Pelicula(d["id"], d["titulo"], d["director"], d["genero"], d["rating"], d["anio"]) for d in datos]
-    
+  
     raiz_categorias = self._arbol_categorias.insertar_raiz("Categorías")
     por_genero = {}
     por_director = {}
-    
+  
     for p in self._peliculas:
         self._arbol_anio.insertar(p, clave = lambda e: e.anio)
         self._avl_titulo.insertar(p, clave = lambda e: e.titulo)
@@ -105,7 +109,7 @@ with open(ruta, "r", encoding = "utf-8") as archivos:
             self.generos[genero] = nodo_g
         self._arbol_categorias.agregar_hijo(self.generos[genero], p)
         self._heap_ratings.insertar((p.rating, p.titulo, p))
-        
+      
         self._grafo_relacionadas.agregar_vertice(p)
         g_key = p.genero.lower().strip()
         d_key = p.director.lower().strip()
@@ -113,7 +117,7 @@ with open(ruta, "r", encoding = "utf-8") as archivos:
         if g_key not in por_genero:
             por_genero[g_key] = []
         por_genero[g_key].append(p)
-        
+      
         if d_key not in por_director:
             por_director[d_key] = []
         por_director[d_key].append(p)
@@ -175,14 +179,14 @@ def obtener_top_n(self, n):
     """Devuelve los N elementos mayores sin destruir ni modificar el heap"""
     if n <= 0 or self.esta_vacio():
         return []
-        
+      
     heap_aux = MaxHeap()
     heap_aux._elementos = list(self._elementos)
-    
+  
     resultado = []
     for _ in range(min(n, len(heap_aux))):
         resultado.append(heap_aux.extraer_maximo())
-        
+      
     return resultado
 ```
 
@@ -196,11 +200,11 @@ Para mantener todo completo, se añadió un método similar a la definición de 
 
     heap_aux = MinHeap()
     heap_aux._elementos = list(self._elementos)
-    
+  
     resultado = []
     for _ in range(min(n, len(heap_aux))):
         resultado.append(heap_aux.extraer_minimo())
-        
+      
     return resultado
 ```
 
@@ -235,6 +239,6 @@ para quitar la direccionalidad. El código original se conservó y se utilizó p
 ---
 
 ## 7. Datos y evidencia
+
 * Script de comparación del MaxHeap con el método previo (utilizando sorted): [heap_vs_sorted.py](../algoritmos/heap_vs_sorted.py)
 * Salidas de scripts de prueba: [tests](../tests/)
-

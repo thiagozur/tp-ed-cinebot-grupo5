@@ -41,12 +41,20 @@ class ArbolBST:
     def _buscar_recursivo(self, nodo, valor, clave, resultados):
         if nodo is None:
             return None
-
+        
         val_nodo = clave(nodo.dato)
         
-        if valor == val_nodo or valor in val_nodo:
+        if valor == val_nodo:
             resultados.append(nodo.dato)
             self._buscar_recursivo(nodo.derecho, valor, clave, resultados)
+        elif isinstance(valor, str):
+            if valor in val_nodo:
+                resultados.append(nodo.dato)
+                self._buscar_recursivo(nodo.derecho, valor, clave, resultados)
+            elif valor < val_nodo:
+                self._buscar_recursivo(nodo.izquierdo, valor, clave, resultados)
+            else:
+                self._buscar_recursivo(nodo.derecho, valor, clave, resultados)
         elif valor < val_nodo:
             self._buscar_recursivo(nodo.izquierdo, valor, clave, resultados)
         else:

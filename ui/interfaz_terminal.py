@@ -56,14 +56,17 @@ class InterfazTerminal:
                     print("\nNo se encontraron películas con ese director.")
 
             elif opcion == "4":
-                anio = int(input("Ingrese el año de estreno: ").strip())
-                resultado = self.gestor.buscar_por_anio(anio)
-                if resultado:
-                    print(f"\nPelículas estrenadas en {anio}:")
-                    for i, pelicula in enumerate(resultado, 1):
-                        print(f"{i}. {pelicula}")
-                else:
-                    print(f"\nNo se encontraron películas estrenadas en {anio}.")
+                try:
+                    anio = int(input("Ingrese el año de estreno: ").strip())
+                    resultado = self.gestor.buscar_por_anio(anio)
+                    if resultado:
+                        print(f"\nPelículas estrenadas en {anio}:")
+                        for i, pelicula in enumerate(resultado, 1):
+                            print(f"{i}. {pelicula}")
+                    else:
+                        print(f"\nNo se encontraron películas estrenadas en {anio}.")
+                except Exception:
+                    print("\nLa respuesta ingresada no es un año válido.")
                 
             elif opcion == "5":
                 genero = input("Ingrese el género: ").strip()
@@ -106,7 +109,7 @@ class InterfazTerminal:
             elif opcion == "7":
                 n = int(input("¿Cuantas películas desea mostrar? Ingrese el número: "))
                 resultado = self.gestor.obtener_top_n_mejores(n)
-                 
+                    
                 if resultado:
                     print("\nTop N mejores películas:")
                     for i, pelicula in enumerate(resultado, 1):

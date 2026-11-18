@@ -150,9 +150,9 @@ def obtener_relacionadas(self, pelicula, maraton = False):
 
 ## 5. Conclusión
 
-* **El montículo máximo** garantiza búsquedas eficientes sin importar la cantidad de películas solicitadas o si la base de datos es muy grande, a diferencia del método implementado anteriormente.
-* **El grafo no dirigido** permite organizar el dominio de acuerdo a las relaciones entre películas de una mejor manera, permitiendo devolver una mejor búsqueda de películas relacionadas y la implementación del sistema de sugerencias.
-* Ninguna de las dos se usó "por cumplir": el MaxHeap resuelve un problema real (eficiencia de búsqueda) y el Grafo resuelve otro (relación de los elementos del dominio).
+* **DFS** muestra de manera rápida y conveniente la maratón recomendada.
+* **BFS** permite que el usuario encuentre un camino corto entre dos películas para relacionarlas, aunque no necesariamente sea una sucesión de películas agradable de ver.
+* **El algoritmo de Dijkstra** permite que el usuario elija conectar esas mismas dos películas a través de una sucesión de películas que resulte "menos chocante", buscando el menor costo siempre entre cada par.
 
 ---
 
